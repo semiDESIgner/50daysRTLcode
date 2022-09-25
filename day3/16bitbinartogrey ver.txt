@@ -1,0 +1,14 @@
+module day3btog(input [15:0] a,output [15:0]y
+
+    );
+    
+    genvar i;
+    assign y[15]=a[15];
+    
+    for(i=14;i>=0;i=i-1)
+    begin
+    assign y[i]=a[i+1]^a[i];
+    end
+   
+    
+endmodule

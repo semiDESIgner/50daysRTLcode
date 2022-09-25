@@ -1,0 +1,16 @@
+module day3tb();
+wire [15:0]y;
+reg [15:0]a;
+genvar i;
+day3btog dd1(.a(a),.y(y));
+initial begin
+a=16'b0000;
+
+end
+for(i=1;i<=15;i=i+1)
+begin
+always#i a[i]=~a[i];
+end
+always#1 a[0]=~a[0];
+
+endmodule
