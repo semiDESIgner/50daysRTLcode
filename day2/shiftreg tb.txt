@@ -1,0 +1,17 @@
+module srtb();
+wire y;
+reg clk,clr,din;
+reg [3:0]temp;
+shiftreg du1(.clk(clk),.din(din),.clr(clr),.y(y));
+initial begin
+clk=1'b1;
+clr=1'b0;
+din=1'b0;
+
+end
+always#5 clk=~clk;
+always#100 clr=~clr;
+always#20 din=~din;
+
+
+endmodule

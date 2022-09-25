@@ -1,0 +1,19 @@
+module shiftreg(input din,clk,clr,output reg y
+               
+    );
+    reg [3:0]temp;
+    always@(posedge clk)
+    begin
+    if(clr)
+    temp=4'b0;
+    else
+    begin
+   
+   temp=temp>>1'b1;
+   temp[3]=din ;
+    
+    end
+    y=temp[0];
+    end
+   
+    
