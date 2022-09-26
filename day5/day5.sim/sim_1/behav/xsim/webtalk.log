@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Sep 26 18:34:31 2022
+# Process ID: 9888
+# Current directory: E:/viivado/day5/day5.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/viivado/day5/day5.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/viivado/day5/day5.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/viivado/day5/day5.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/viivado/day5/day5.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Sep 26 18:34:31 2022...
