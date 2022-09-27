@@ -1,0 +1,12 @@
+
+{ 
+    crc :  6763044267137313146  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 4e1c116963304b1997dde3a5f8c0cf12 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot day6tb_behav xil_defaultlib.day6tb xil_defaultlib.glbl" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:47:47" , 
+    linkCmd : "E:\\VLSI\\Vivado\\2020.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/day6tb_behav/xsimk.exe\"   \"xsim.dir/day6tb_behav/obj/xsim_0.win64.obj\" \"xsim.dir/day6tb_behav/obj/xsim_1.win64.obj\" -L\"E:\\VLSI\\Vivado\\2020.2\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
