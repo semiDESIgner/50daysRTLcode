@@ -1,0 +1,7 @@
+Running: xsim.dir/day7tb_behav/xsimk.exe -simmode gui -wdb day7tb_behav.wdb -simrunnum 0 -socket 61628
+Design successfully loaded
+Design Loading Memory Usage: 6748 KB (Peak: 6748 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 7372 KB (Peak: 7372 KB)
+Simulation CPU Usage: 0 ms

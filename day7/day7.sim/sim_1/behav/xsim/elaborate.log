@@ -1,0 +1,16 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/VLSI/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 3d5102cb1c8141a7833b5f94c1e5fae3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot day7tb_behav xil_defaultlib.day7tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 5 into 'c' is out of bounds [E:/viivado/day7/day7.srcs/sources_1/new/day7.v:30]
+WARNING: [VRFC 10-3705] select index 4 into 's' is out of bounds [E:/viivado/day7/day7.srcs/sources_1/new/day7.v:31]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.day7
+Compiling module xil_defaultlib.day7tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot day7tb_behav
