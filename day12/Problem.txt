@@ -1,0 +1,2 @@
+In the result the first output is not suppose to come and then afterwards for the previous inputs,the output is comin.
+In short for Nth inputs, output is N+1th output
