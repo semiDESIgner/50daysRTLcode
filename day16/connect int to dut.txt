@@ -1,0 +1,69 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 10.10.2022 22:23:34
+// Design Name: 
+// Module Name: jkss
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+`timescale 1ns/1ps
+ 
+module top(
+input [1:0] a,b,c,d,
+input [1:0] sel,
+output reg [1:0] y
+);
+always@(*)
+begin
+if(sel == 2'b00)
+y = a;
+else if (sel == 2'b01)
+y = b;
+else if (sel == 2'b10)
+y = c;
+else
+y = d;
+end
+endmodule
+ 
+ 
+interface top_intf();
+logic [1:0] a,b,c,d;
+logic [1:0] sel;
+logic [1:0] y;
+endinterface
+ 
+module tbh3();
+ 
+top_intf vif();
+integer i;
+ 
+top dut (.a(vif.a), .b(vif.b), .c(vif.c), .d(vif.d), .sel(vif.sel), .y(vif.y));
+ 
+initial begin
+for(i = 0; i < 10; i++) begin
+vif.a = $random();
+vif.b = $random();
+vif.c = $random();
+vif.d = $random;
+vif.sel = $random;
+#10;
+$display("a : %0d, b: %0d, c : %0d, d:%0d , sel : %0d and y: %0d", vif.a,vif.b,vif.c,vif.d,vif.sel,vif.y);
+end
+end
+ 
+endmodule
