@@ -1,0 +1,102 @@
+`timescale 1ns / 1ps 
+ 
+module uart_tx_logic(
+    input clk,
+    input start,
+    output reg tx, 
+    input [7:0] txdata,
+    output reg [9:0] TXDATA
+ 
+    );
+ integer bitIndex = 0;   
+ parameter clk_value = 30_000_000;
+ parameter baud = 9600;
+ 
+ parameter wait_count = clk_value / baud;
+ 
+ reg bitDone = 0;
+ integer count = 0;
+ parameter idle = 0, send = 1, check = 2;
+ reg [1:0] state = idle;
+ 
+
+ always@(posedge clk)
+ begin
+  if(state == idle)
+    begin 
+    count <= 0;
+    end
+  else 
+  begin
+    if(count == wait_count)
+       begin
+        bitDone <= 1'b1;
+        count   <= 0;  
+       end
+    else
+       begin
+       count   <= count + 1;
+       bitDone <= 1'b0;  
+      end    
+  end
+ 
+ end
+ 
+ 
+ 
+ always@(posedge clk)
+ begin
+ case(state)
+ idle : 
+     begin
+           tx      <= 1'b1;
+           TXDATA  <= 8'h00;
+           bitIndex <= 0;
+           
+            if(start == 1'b1)
+              begin
+                TXDATA <= {1'b1,txdata,1'b0};
+                state  <= send;
+              end
+           
+     end
+ 
+  send: begin
+           tx       <=TXDATA[bitIndex];
+           bitIndex <= bitIndex + 1;
+           state    <= check;
+  end 
+  
+  check: 
+  begin
+        if(bitDone == 1'b1)
+            begin
+               if(bitIndex == 10)
+                begin
+                 state <= idle;
+                end
+                else
+                begin
+                state <= send;
+                end
+            end
+        else
+        begin
+        state<=idle;
+        end
+  end
+ 
+ default: state <= idle;
+ 
+ endcase
+ 
+ end
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ endmodule

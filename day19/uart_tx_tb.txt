@@ -1,0 +1,57 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 14.10.2022 10:42:52
+// Design Name: 
+// Module Name: uarttb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module uarttb();
+reg clk,start;
+reg [7:0]txdata;
+wire tx;
+wire [7:0]txdata;
+wire [9:0] TXDATA;
+
+uart_tx_logic duu1(.clk(clk),.start(start),.txdata(txdata),.tx(tx),.TXDATA(TXDATA));
+initial begin
+clk=1;
+start=0;
+txdata=0;
+#10;
+txdata=8'h0ff;
+#20;
+txdata=8'h0f;
+#30;
+txdata=8'hf0;
+#40;
+txdata=8'hff;
+
+
+end
+always#1 clk=~clk;
+always#10 start=~start;
+
+
+
+
+
+
+
+
+
+endmodule
