@@ -1,0 +1,60 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 12.09.2022 14:20:16
+// Design Name: 
+// Module Name: instmemmm
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module tb_instmem();
+reg clk;
+reg we_IM;
+reg [15:0] dataIM;
+reg [11:0] addIM;
+wire [15:0] outIM;
+
+// Instantiation of the design
+instmem d1 (.clk(clk), .we_IM(we_IM), .dataIM(dataIM), .addIM(addIM), .outIM(outIM));
+
+
+// Initialization of signals
+initial
+begin
+	clk <= 0;
+	we_IM <= 0;
+	dataIM <= 16'h0000;
+	addIM <= 12'h000;
+end
+
+// Clock setup
+always #5 clk = ~clk;
+
+// Address setup 
+always #60 addIM = addIM + 12'h001;
+
+// Stimulus
+initial 
+begin
+	#5 we_IM <= 1;
+	#5 dataIM <= 16'h0234;
+	#30 we_IM <= 0;
+
+	#60 we_IM <= 1;
+	#60 dataIM <= 16'h0381;
+	#90 we_IM <= 0;
+end
+endmodule
