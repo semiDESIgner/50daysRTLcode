@@ -1,0 +1,288 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 31.10.2022 18:52:51
+// Design Name: 
+// Module Name: controllertb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module tb_controller ();
+reg clk;
+reg en;
+reg [3:0] opcode;
+wire loadA;
+wire loadB;
+wire loadC;
+wire loadIR;
+wire loadPC;
+wire incPC;
+wire mode;
+wire we_DM;
+wire selA;
+wire selB;
+reg p,q,r,s,t;
+
+// Design instantiation
+controller c1 (.clk(clk), .en(en), .opcode(opcode), .loadA(loadA), .loadB(loadB), .loadC(loadC), .loadIR(loadIR), .loadPC(loadPC), .incPC(incPC), .mode(mode), .we_DM(we_DM), .selA(selA), .selB(selB));
+
+// initialization
+initial begin 
+
+
+
+end
+initial
+begin
+	clk = 0;
+	en = 0;
+	opcode = 4'b0000;
+end
+// Clock setup
+always #5 clk = ~clk;
+
+// Stimulus
+initial
+begin
+	#10 en = 1;
+	opcode = 4'b0001;
+	
+	#20 opcode = 4'b0001;
+
+	#20 opcode = 4'b0010;
+end
+
+initial begin ///p
+p=1'b1;
+p<=#10 1'b0;
+p<=#15 1'b1;
+p<=#18 1'b0;
+p<=#22 1'b1;
+p<=#25 1'b0;
+
+p<=#30 1'b1;
+p<=#40 1'b0;
+
+p<=#45 1'b1;
+p<=#48 1'b0;
+
+p<=#53 1'b1;
+p<=#64 1'b0;
+
+p<=#69 1'b1;
+p<=#79 1'b0;
+
+
+
+p<=#99 1'b1;
+p<=#102 1'b0;
+
+p<=#106 1'b1;
+p<=#109 1'b0;
+
+p<=#114 1'b1;
+p<=#124 1'b0;
+
+end
+
+
+initial begin //q
+q=1'b1;
+q<=#3 1'b0;
+
+q<=#15 1'b1;
+q<=#18 1'b0;
+
+q<=#22 1'b1;
+q<=#25 1'b0;
+
+q<=#30 1'b1;
+q<=#33 1'b0;
+
+q<=#37 1'b1;
+q<=#40 1'b0;
+
+q<=#45 1'b1;
+q<=#48 1'b0;
+
+q<=#57 1'b1;
+q<=#60 1'b0;
+
+q<=#69 1'b1;
+q<=#72 1'b0;
+
+q<=#76 1'b1;
+q<=#79 1'b0;
+
+q<=#84 1'b1;
+q<=#87 1'b0;
+
+
+
+q<=#99 1'b1;
+q<=#102 1'b0;
+
+q<=#106 1'b1;
+q<=#109 1'b0;
+
+q<=#114 1'b1;
+q<=#117 1'b0;
+
+q<=#121 1'b1;
+q<=#124 1'b0;
+
+end
+
+
+initial begin //r
+r=1'b1;
+r<=#3 1'b0;
+
+r<=#15 1'b1;
+r<=#25 1'b0;
+
+r<=#30 1'b1;
+r<=#40 1'b0;
+
+r<=#45 1'b1;
+r<=#48 1'b0;
+
+r<=#57 1'b1;
+r<=#60 1'b0;
+
+r<=#69 1'b1;
+r<=#79 1'b0;
+
+r<=#84 1'b1;
+r<=#94 1'b0;
+
+r<=#99 1'b1;
+r<=#109 1'b0;
+
+r<=#114 1'b1;
+r<=#124 1'b0;
+
+
+
+
+
+
+
+end
+
+
+initial begin //s
+s=1'b1;
+s<=#3 1'b0;
+
+s<=#15 1'b1;
+s<=#18 1'b0;
+
+s<=#22 1'b1;
+s<=#25 1'b0;
+
+s<=#30 1'b1;
+s<=#33 1'b0;
+
+s<=#37 1'b1;
+s<=#40 1'b0;
+
+s<=#45 1'b1;
+s<=#48 1'b0;
+
+s<=#57 1'b1;
+s<=#60 1'b0;
+
+s<=#69 1'b1;
+s<=#72 1'b0;
+
+s<=#76 1'b1;
+s<=#79 1'b0;
+
+s<=#84 1'b1;
+s<=#87 1'b0;
+
+s<=#91 1'b1;
+s<=#94 1'b0;
+
+s<=#106 1'b1;
+s<=#109 1'b0;
+
+
+s<=#114 1'b1;
+s<=#117 1'b0;
+
+s<=#121 1'b1;
+s<=#124 1'b0;
+
+
+end
+
+initial begin //t
+t=1'b1;
+t<=#10 1'b0;
+
+t<=#15 1'b1;
+t<=#18 1'b0;
+
+t<=#22 1'b1;
+t<=#25 1'b0;
+
+t<=#30 1'b1;
+t<=#33 1'b0;
+
+t<=#37 1'b1;
+t<=#40 1'b0;
+
+t<=#45 1'b1;
+t<=#48 1'b0;
+
+t<=#57 1'b1;
+t<=#60 1'b0;
+
+t<=#69 1'b1;
+t<=#72 1'b0;
+
+t<=#76 1'b1;
+t<=#79 1'b0;
+
+t<=#84 1'b1;
+t<=#87 1'b0;
+
+t<=#91 1'b1;
+t<=#94 1'b0;
+
+t<=#99 1'b1;
+t<=#109 1'b0;
+
+
+t<=#114 1'b1;
+t<=#117 1'b0;
+
+t<=#121 1'b1;
+t<=#124 1'b0;
+
+
+
+
+
+
+
+
+end
+
+
+endmodule 
